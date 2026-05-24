@@ -51,7 +51,9 @@ alias hib="systemctl hibernate"
 # alias sus="systemctl suspend"
 alias sus="systemctl suspend && .config/eww/scripts/i3lock-widgets"
 
-alias emacs_nano="emacs -l ~/.emacs.d/init.el & disown"
+emacs_nano() {
+    emacs -l ~/.emacs.d/init.el "$@" & disown
+}
 alias emacs_doom="~/.config/emacs/bin/doom run & disown"
 
 
