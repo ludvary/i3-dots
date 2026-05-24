@@ -15,7 +15,6 @@
 <p align="center">
   <img src="assets/kitty.png" width="800"/>
   <br/>
-  <i>Kitty</i>
 </p>
 
 ---
@@ -24,7 +23,6 @@
 <p align="center">
   <img src="assets/nvim.png" width="800"/>
   <br/>
-  <i>Lunar Vim</i>
 </p>
 
 ---
@@ -35,7 +33,6 @@
   <img src="assets/nano_emacs.png" width="400"/>
   <img src="assets/nano_emacs_file.png" width="400"/>
   <br/>
-  <i>Nano Emacs</i>
 </p>
 
 ---
@@ -44,7 +41,6 @@
 <p align="center">
   <img src="assets/doom_emacs_file.png" width="800"/>
   <br/>
-  <i>Doom Emacs</i>
 </p>
 
 ---
