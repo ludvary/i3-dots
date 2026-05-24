@@ -59,7 +59,7 @@
       :onclick "bash ~/.config/eww/scripts/wifi.sh &"
       (box :class "row" :orientation "h" :space-evenly false :halign "start"
         (label :class "icon net"  :text "  ")
-        (label :class "key"       :text "wifi        | ")
+        (label :class "key"       :text "wifi         | ")
         (label :class "val"       :text "${net}")))
 
     (box :class "row" :orientation "h" :space-evenly false :halign "start"
