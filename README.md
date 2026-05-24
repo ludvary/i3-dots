@@ -49,5 +49,5 @@
 <p align="center">
   <img src="assets/lockscreen.png" width="800"/>
   <br/>
-  <i>using i3lock-color and some eww widgets i wrote</i>
+  <i>using i3lock-color and some eww widgets</i>
 </p>
