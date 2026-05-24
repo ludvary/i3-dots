@@ -1,0 +1,285 @@
+set $mod Mod4
+
+# font JetBrainsMono Nerd Font 11
+font pango:FiraCode Nerd Font 11px
+
+exec --no-startup-id dex --autostart --environment i3
+
+exec_always dunst
+
+# Use pactl to adjust volume in PulseAudio.
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# # use pactl to set volume
+# bindsym Mod1+plus exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+# bindsym Mod1+minus exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+
+# # use brightnesctl to set brightness
+# bindsym Mod1 + bracketright exec brightnessctl s +5%
+# bindsym Mod1 + bracketleft exec brightnessctl s 5%-
+
+bindsym Mod1+plus exec --no-startup-id ~/.config/i3/scripts/volume_up.sh
+bindsym Mod1+minus exec --no-startup-id ~/.config/i3/scripts/volume_down.sh
+
+bindsym Mod1+bracketright exec --no-startup-id ~/.config/i3/scripts/brightness_up.sh
+bindsym Mod1+bracketleft exec --no-startup-id ~/.config/i3/scripts/brightness_down.sh
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec kitty
+# bindsym $mod+Return exec ghostty
+
+# kill focused window
+bindsym $mod+q kill
+
+# rofi
+bindsym $mod+Shift+d exec rofi -show run 
+bindsym $mod+d exec rofi -show drun 
+# bindsym $mod+space exec --no-startup-id $HOME/scripts/command_exec_rofi.sh
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+Shift+b split h
+
+# split in vertical orientation
+bindsym $mod+Shift+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+# bindsym $mod+a focus parent
+
+# start spotify
+# bindsym Mod1+Ctrl+y spotify
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# Border settings
+default_border pixel 4
+default_floating_border pixel 4
+# hide_edge_borders none
+
+# # class                 border  backgr. text    indicator child_border
+# client.focused          #70946B #70946B #ffffff #70946B #70946B
+# client.focused_inactive #70946B #70946B #ffffff #70946B #70946B
+# client.unfocused        #70946B #70946B #888888 #70946B #70946B
+# client.urgent           #70946B #70946B #ffffff #70946B #70946B
+# client.placeholder      #70946B #70946B #ffffff #70946B #70946B
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #d4865c #d4865c #ffffff #d4865c #d4865c
+client.focused_inactive #d4865c #d4865c #ffffff #d4865c #d4865c
+client.unfocused        #d4865c #d4865c #888888 #d4865c #d4865c
+client.urgent           #d4865c #d4865c #ffffff #d4865c #d4865c
+client.placeholder      #d4865c #d4865c #ffffff #d4865c #d4865c
+
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+# set $ws1 " "
+# set $ws2 "󰝚 "
+# set $ws3 " "
+# set $ws4 " "
+# set $ws5 "󰜗 "
+# set $ws6 " "
+# set $ws7 "󰍳 "
+# set $ws8 "󰈹 "
+# set $ws9 " "
+# set $ws10 " "
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "0"
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+bindsym Mod1+Tab workspace back_and_forth
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Escape mode "default"
+}
+
+# resize windows
+bindsym $mod+r mode "resize"
+
+# launch nitrogen and restore previous wallpaper
+exec_always nitrogen --restore
+
+# launch the xfce4-power-manager at startup
+exec --no-startup-id xfce4-power-manager
+
+exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets,pkcs11,ssh
+
+# launch picom
+exec_always picom
+
+# # launch network manager
+# exec_always nm-applet
+
+# lock the screen whenever i3 loads
+# exec_always ~/scripts/lock.sh
+# exec_always systemctl restart sshd
+exec --no-startup-id xset s off
+exec --no-startup-id xset -dpms
+exec --no-startup-id xset s noblank
+exec_always $HOME/.config/eww/scripts/i3lock-widgets
+
+# lock after 20 mins on idle
+# exec --no-startup-id xautolock -time 1 -locker ~/.config/eww/scripts/i3lock-widgets # that doesnt work for some reason
+exec_always --no-startup-id sh -c 'pkill xautolock; xautolock -time 20 -locker "$HOME/.config/eww/scripts/i3lock-widgets"' # so that it doesnt spawn mutliple xautlocks?? idk
+
+# switch b/w winodws even in fullscreen
+bindsym $mod+Tab fullscreen disable, focus left, fullscreen enable
+bindsym $mod+Shift+Tab fullscreen disable, focus right, fullscreen enable
+
+# kill picom
+bindsym Mod1+p exec "pkill picom"
+
+#launch polybar
+exec --no-startup-id /bin/bash ~/.config/polybar/launch.sh --forest
+
+# launch xkill
+bindsym --release Mod1+Ctrl+x exec xkill
+
+# launch the operating system without text editor
+bindsym Mod1+e exec "cd ~/hause/significant\ things/ && emacs"
+
+# restart polybar
+# bindsym Mod1+Shift+p exec --no-startup-id /bin/bash ~/.config/polybar/material/scripts/pywal.sh ~/hause/significant things/wallpapers/ && /bin/bash ~/.config/polybar/launch.sh --material
+bindsym Mod1+Shift+p exec --no-startup-id /bin/bash ~/.config/polybar/launch.sh --forest
+
+# launch gnuplot plots as floating windows
+# for_window [class="gnuplot_qt"] floating enable
+for_window [class="gnuplot_qt"] floating enable, focus
+# for_window [class="gnuplot_qt"] move to scratchpad, scratchpad show, floating enable, move position center
+
+# launch rofi wifi manager
+bindsym Mod1+Shift+w exec "/home/Fornax/scripts/rofi-wifi-menu.sh"
+# bindsym Mod1+Shift+w exec "~/networkmanager-dmenu/networkmanager_dmenu"
+
+# gaps
+gaps inner 16
+gaps outer 7
+gaps top 7
+
+# lock the screen
+# bindsym Mod1+Ctrl+Return exec ~/scripts/lock.sh
+bindsym Mod1+Ctrl+Return exec $HOME/.config/eww/scripts/i3lock-widgets
+
+# # take screenshot
+# bindsym --release Mod1+Ctrl+f exec --no-startup-id $HOME/scripts/screenie_and_xclip.sh
+
+# # select region and take screenshot
+# bindsym --release Mod1+Ctrl+s exec --no-startup-id $HOME/scripts/screenie_and_xclip_clipboard.sh
+
+# fullscreen screenshot -> save + clipboard
+bindsym --release Mod1+Ctrl+f exec --no-startup-id flameshot full -p ~/scrot
+
+# region screenshot → save + clipboard
+bindsym --release Mod1+Ctrl+s exec --no-startup-id flameshot gui -p ~/scrot
+
+
+# launch elisa
+# bindsym Mod1+m exec dbus-launch --exit-with-session elisa
+
+# open thunar
+bindsym Mod1+t exec thunar
+bindsym Mod1+d exec thunar ~/Downloads
+bindsym Mod1+s exec thunar ~/hause/significant\ things
+bindsym Mod1+b exec thunar ~/hause/significant\ things/books
+
+exec_always --no-startup-id eww daemon
+for_window [class="Eww"] floating enable
+# for_window [class="Eww"] border none, sticky enable
+for_window [class="Eww"] sticky enable
+for_window [class="Eww"] border pixel 2
+# bindsym $mod+Shift+m exec --no-startup-id sh -c 'if eww active-windows | grep -q sysmon; then eww close sysmon; else eww open sysmon; fi'
+bindsym $mod+Shift+m exec --no-startup-id ~/.config/eww/toggle_sysmon.sh
+
+# for_window [class="^.*"] border pixel 0
+for_window [class="com.mitchellh.ghostty"] border pixel r
