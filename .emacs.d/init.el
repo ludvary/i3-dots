@@ -1,24 +1,3 @@
-;; (require 'package)
-;; (setq package-archives
-;;       '(("melpa"  . "https://melpa.org/packages/")
-;;         ("gnu"    . "https://elpa.gnu.org/packages/")
-;;         ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
-;; (package-initialize)
-;; (package-refresh-contents)  ;; force refresh every time, no conditions
-
-;; ;;; evil first, before anything else
-;; (unless (package-installed-p 'evil)
-;;   (package-install 'evil))
-;; (require 'evil)
-;; (evil-mode 1)
-
-;; ;;; nano separately, wrapped so errors don't break evil
-;; (condition-case err
-;;     (progn
-;;       (add-to-list 'load-path "~/nano-emacs/")
-;;       (load "~/nano-emacs/nano.el"))
-;;   (error (message "nano failed to load: %s" err)))
-
 (require 'package)
 (setq package-archives
       '(("melpa"  . "https://melpa.org/packages/")
@@ -28,10 +7,6 @@
 ;; (package-refresh-contents)
 
 (setq evil-want-C-u-scroll t)
-
-(require 'evil)
-(evil-mode 1)
-
 
 ;;; evil
 (unless (package-installed-p 'evil)
@@ -130,3 +105,8 @@
                   (nano-splash)
                   (cancel-function-timers 'nano-splash-fade-out-slow))))
   (error (message "nano-splash failed: %s" err)))
+
+
+(setq-default tab-width 4)
+(setq-default c-basic-offset 4)
+(setq-default indent-tabs-mode nil)

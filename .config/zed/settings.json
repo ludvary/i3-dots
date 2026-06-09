@@ -7,6 +7,9 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+    "ensure_final_newline_on_save": false,
+    "remove_trailing_whitespace_on_save": false,
+    "format_on_save": "off",
     "buffer_line_height": "comfortable",
     "buffer_font_weight": 350.0,
     "proxy": "",
@@ -26,6 +29,10 @@
         "button": false,
     },
     "terminal": {
+        "max_scroll_history_lines": 20000,
+        "copy_on_select": true,
+        "working_directory": "current_file_directory",
+        "show_count_badge": true,
         "font_size": 15.0,
         "button": false,
     },
@@ -108,7 +115,7 @@
     "base_keymap": "Emacs",
     "icon_theme": "Zed (Default)",
     "ui_font_size": 16.0,
-    "buffer_font_size": 16.0,
+    "buffer_font_size": 17.0,
     "theme": {
         "mode": "dark",
         "light": "One Light",

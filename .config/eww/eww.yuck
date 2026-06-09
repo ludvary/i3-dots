@@ -1,12 +1,12 @@
 (defpoll cpu :interval "1s"
   `~/.config/eww/scripts/sys_info --cpu`)
-(defpoll mem :interval "1s"
+(defpoll mem :interval "2s"
   `~/.config/eww/scripts/sys_info --mem`)
-(defpoll net :interval "1s"
+(defpoll net :interval "3s"
   `~/.config/eww/scripts/sys_info --net`)
 (defpoll temp :interval "1s"
   `~/.config/eww/scripts/sys_info --temp`)
-(defpoll bat :interval "1s"
+(defpoll bat :interval "5s"
   `~/.config/eww/scripts/sys_info --bat`)
 (defpoll bat_status :interval "5s"
   `~/.config/eww/scripts/sys_info --bat-status`)

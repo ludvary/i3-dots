@@ -214,8 +214,9 @@ exec_always $HOME/.config/eww/scripts/i3lock-widgets
 exec_always --no-startup-id sh -c 'pkill xautolock; xautolock -time 20 -locker "$HOME/.config/eww/scripts/i3lock-widgets"' # so that it doesnt spawn mutliple xautlocks?? idk
 
 # switch b/w winodws even in fullscreen
-bindsym $mod+Tab fullscreen disable, focus left, fullscreen enable
-bindsym $mod+Shift+Tab fullscreen disable, focus right, fullscreen enable
+# bindsym $mod+Tab fullscreen disable, focus left, fullscreen enable
+# bindsym $mod+Shift+Tab fullscreen disable, focus right, fullscreen enable
+bindsym Mod1+Ctrl+Tab fullscreen disable, focus left, fullscreen enable
 
 # kill picom
 bindsym Mod1+p exec "pkill picom"
