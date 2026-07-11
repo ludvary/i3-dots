@@ -50,6 +50,7 @@ git add -A
 if git diff --cached --quiet; then
     echo "No changes to commit."
 else
-    NOW=$(date '+%Y-%m-%d %H:%M:%S')
-    git commit -m "dots update: $NOW"
+    # NOW=$(date '+%Y-%m-%d %H:%M:%S')
+    # git commit -m "dots update: $NOW"
+    echo "ready for gc..."
 fi

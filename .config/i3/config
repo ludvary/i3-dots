@@ -9,8 +9,12 @@ exec_always dunst
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+# bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/i3/scripts/volume_up.sh
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/i3/scripts/volume_down.sh
+bindsym XF86AudioMute exec --no-startup-id ~/.config/i3/scripts/volume_mute.sh
 
 # # use pactl to set volume
 # bindsym Mod1+plus exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
@@ -30,8 +34,8 @@ bindsym Mod1+bracketleft exec --no-startup-id ~/.config/i3/scripts/brightness_do
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty
-# bindsym $mod+Return exec ghostty
+# bindsym $mod+Return exec kitty
+bindsym $mod+Return exec ghostty
 
 # kill focused window
 bindsym $mod+q kill
@@ -239,6 +243,8 @@ bindsym Mod1+Shift+p exec --no-startup-id /bin/bash ~/.config/polybar/launch.sh 
 for_window [class="gnuplot_qt"] floating enable, focus
 # for_window [class="gnuplot_qt"] move to scratchpad, scratchpad show, floating enable, move position center
 
+for_window [class="Grace"] floating enable
+
 # launch rofi wifi manager
 bindsym Mod1+Shift+w exec "/home/Fornax/scripts/rofi-wifi-menu.sh"
 # bindsym Mod1+Shift+w exec "~/networkmanager-dmenu/networkmanager_dmenu"
@@ -262,7 +268,8 @@ bindsym Mod1+Ctrl+Return exec $HOME/.config/eww/scripts/i3lock-widgets
 bindsym --release Mod1+Ctrl+f exec --no-startup-id flameshot full -p ~/scrot
 
 # region screenshot → save + clipboard
-bindsym --release Mod1+Ctrl+s exec --no-startup-id flameshot gui -p ~/scrot
+# bindsym --release Mod1+Ctrl+s exec --no-startup-id flameshot gui -p ~/scrot
+bindsym --release Mod1+Ctrl+s exec --no-startup-id flameshot gui -p ~/scrot --clipboard
 
 
 # launch elisa

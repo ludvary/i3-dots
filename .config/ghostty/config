@@ -283,3 +283,5 @@ keybind = ctrl+shift+super+l=resize_split:right,10
 keybind = ctrl+shift+super+h=resize_split:right,10
 keybind = ctrl+shift+super+j=resize_split:down,10
 keybind = ctrl+shift+super+k=resize_split:up,10
+
+window-save-state = always

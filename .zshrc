@@ -47,9 +47,10 @@ alias minecraft="java -jar $HOME/Downloads/apps/SKlauncher-3.2.18.jar"
 alias silksong="wine $HOME/.wine/drive_c/Program\ Files\ \(x86\)/DODI-Repacks/Hollow\ Knight\ Silksong/Hollow\ Knight\ Silksong.exe"
 alias hollow_knight="wine $HOME/.wine/drive_c/Program\ Files\ \(x86\)/DODI-Repacks/Hollow\ Knight/hollow_knight.exe"
 
-alias hib="systemctl hibernate"
+alias hib="systemctl hibernate && $HOME/.config/eww/scripts/i3lock-widgets"
+alias screen_off="xset dpms force off"
 # alias sus="systemctl suspend"
-alias sus="systemctl suspend && .config/eww/scripts/i3lock-widgets"
+alias sus="systemctl suspend && $HOME/.config/eww/scripts/i3lock-widgets"
 
 emacs_nano() {
     emacs -l ~/.emacs.d/init.el "$@" & disown
@@ -115,3 +116,5 @@ export SAL_USE_VCLPLUGIN=gen
 export LS_COLORS="di=34:ln=35:so=32:pi=33:ex=31:bd=31:cd=31:su=31:sg=31:tw=31:ow=31"
 export EZA_COLORS="di=1;34"
 zstyle ':completion:*' list-colors 'di=1;34'
+
+export MANPAGER='/home/ludvary/.local/bin/lvim +Man!'
