@@ -5,6 +5,8 @@ font pango:FiraCode Nerd Font 11px
 
 exec --no-startup-id dex --autostart --environment i3
 
+exec --no-startup-id xinput set-prop "ATK NK mouse NANO dongle Mouse" "libinput Accel Profile Enabled" 0,1,0
+
 exec_always dunst
 
 # Use pactl to adjust volume in PulseAudio.

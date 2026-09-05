@@ -46,6 +46,8 @@ alias Books="cd $HOME/hause/significant\ things/books/"
 alias minecraft="java -jar $HOME/Downloads/apps/SKlauncher-3.2.18.jar"
 alias silksong="wine $HOME/.wine/drive_c/Program\ Files\ \(x86\)/DODI-Repacks/Hollow\ Knight\ Silksong/Hollow\ Knight\ Silksong.exe"
 alias hollow_knight="wine $HOME/.wine/drive_c/Program\ Files\ \(x86\)/DODI-Repacks/Hollow\ Knight/hollow_knight.exe"
+alias skyrim="wine $HOME/.wine/drive_c/Program\ Files\ \(x86\)/DODI-Repacks/The\ Elder\ Scrolls\ V\ Skyrim\ Anniversary\ Edition/SkyrimSELauncher.exe"
+alias ets2="$HOME/.wine/drive_c/Program\ Files\ \(x86\)/DODI-Repacks/Euro\ Truck\ Simulator\ 2/bin/win_x64/eurotrucks2.exe"
 
 alias hib="systemctl hibernate && $HOME/.config/eww/scripts/i3lock-widgets"
 alias screen_off="xset dpms force off"

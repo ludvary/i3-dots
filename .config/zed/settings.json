@@ -7,6 +7,20 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+    "ssh_connections": [
+        {
+            "host": "192.168.33.174",
+            "username": "krishna",
+            "args": [],
+            "projects": [
+                {
+                    "paths": [
+                        "/home/krishna/hause/significant things/code"
+                    ]
+                }
+            ]
+        }
+    ],
     "ensure_final_newline_on_save": false,
     "remove_trailing_whitespace_on_save": false,
     "format_on_save": "off",
